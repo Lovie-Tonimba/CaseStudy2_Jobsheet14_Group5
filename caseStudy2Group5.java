@@ -1,14 +1,6 @@
 import java.util.Scanner;
 public class caseStudy2Group5 {
 
-    static int select;
-    static int index;
-    static String menu [] ={"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"};
-    static int menulist [] = new int [menu.length];
-    public static void main(String[] args) {
-        String [][] costumer = new String[10][5];
-        mainMenu(costumer);
-    }
     static void mainMenu(String[][]costumer){
         Scanner sc = new Scanner(System.in);
         while (true) { 
@@ -18,7 +10,7 @@ public class caseStudy2Group5 {
             System.out.println("3. Exit");
             System.out.print("Select menu: ");
             select = sc.nextInt();
-
+            
             if(select == 1){
                 addOrder(costumer);
             }else if(select == 2){
@@ -31,7 +23,7 @@ public class caseStudy2Group5 {
             }
         }
     }
-
+    
     static void addOrder(String[][]costumer){
         Scanner sc = new Scanner(System.in);
         if(index < costumer.length){
@@ -46,7 +38,7 @@ public class caseStudy2Group5 {
             System.out.println("Order capacity is full.\n");
         }
     }
-
+    
     static void displayMenus(String[][]costumer){
         Scanner sc = new Scanner(System.in);
         System.out.println();
@@ -56,23 +48,28 @@ public class caseStudy2Group5 {
         System.out.println("3. Teh Tarik - Rp 12000"); 
         System.out.println("4. Fried Noodle - Rp 18000");
 
-        for (int i = 0; i < 10; i++) {
+        while (true) { 
             System.out.print("Select menu (enter the menu number, or 0 to finish): ");
-            int menuSelect = sc.nextInt();
-            if(menuSelect == 0){
+            selectMenu = sc.nextInt();
+            if(selectMenu == 0){
                 break;
-            }
-            for (int j = 0; j < menu.length; j++) {
-                switch (menuSelect) {
-                    case 1:
-                        System.out.println("Input the number of items for " + menu[j]);
+            } 
+            if(selectMenu > 0 && selectMenu < 5){
+                while (true) { 
+                    System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
+                    item = sc.nextInt();
+                    if(item > 0){
                         break;
-                    case 2:
-                    default:
-                        throw new AssertionError();
+                    }else{
+                        System.out.println("Invalid input. Try again.");
+                    }
                 }
+                costumer[index][3] = Integer.toString(item);
+            }else{
+                System.out.println("Invalid menu selection. Try again.");
             }
         }
+        costumer[index][2] = Integer.toString(selectMenu);
     }
 
     static void displayOrderList(String[][]costumer){
@@ -94,7 +91,7 @@ public class caseStudy2Group5 {
                         for(k = 0; k<costumer[i][j];)
                         System.out.print("Detail order: ");
                         System.out.print(costumer [i][j] + costumer[i][3]);
-                        System.out.println("");
+                        System.out.println("jjjjjj");
                         break;
                     }
                 }
