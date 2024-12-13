@@ -41,6 +41,7 @@ public class caseStudy2Group5 {
         }
         String menuName;
         menuName = sc.nextLine();
+        
         System.out.println("==== MENU KAFE ====");
         System.out.println("1. kopi hitam - Rp 15.000");
         System.out.println("2. latte - Rp 22.000");
