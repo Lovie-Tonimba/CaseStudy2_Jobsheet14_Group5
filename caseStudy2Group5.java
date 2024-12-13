@@ -87,31 +87,6 @@ public class caseStudy2Group5 {
     }
 
     static void displayOrderList(String[][]costumer){
-        // boolean notNull = false;
-        // System.out.println();
-        // System.out.println("===== ORDER LIST =====");
-        // for (int i = 0; i < costumer.length;i++){
-            //     if(costumer[i][0] != null){
-                //         notNull = true;
-        //         for(int j = 0; j < costumer[i].length;j++){
-        //             switch (j) {
-            //                 case 0:
-            //                 System.out.print("Costumer name: " + costumer[i][j]);
-            //                 break;
-            //                 case 1:
-            //                 System.out.print("Table number: "+ costumer[i][j]);
-            //                 break;
-            //                 case 2:
-            //                 for(int k = 0; k<costumer[i][j];)
-            //                 System.out.print("Detail order: ");
-            //                 System.out.print(costumer [i][j] + costumer[i][3]);
-            //                 System.out.println("jjjjjj");
-            //                 break;
-            //             }
-            //         }
-            //     }
-            // }
-            
         }
         static int select;
         static int index;
