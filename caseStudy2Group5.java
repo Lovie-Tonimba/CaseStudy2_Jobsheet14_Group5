@@ -101,7 +101,7 @@ public class caseStudy2Group5 {
                 String[] orders = costumer[i][2].split("\n");
                 for(String order : orders){
                     if(!order.isEmpty()){
-                        System.out.println("- " +order);
+                        System.out.println("- " + order);
                     }
                 }
                 System.out.println("Total price "+ costumer[i][4]);
