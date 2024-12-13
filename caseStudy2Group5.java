@@ -117,7 +117,9 @@ public class caseStudy2Group5 {
         static int index;
         static int selectMenu;
         static int item;
+        static double totalOrder;
         static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
+        static double [] price= {15000, 22000, 12000, 18000};
         public static void main(String[] args) {
             String [][] costumer = new String[10][5];
             mainMenu(costumer);
