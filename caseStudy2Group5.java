@@ -94,7 +94,7 @@ public class caseStudy2Group5 {
                         for(k = 0; k<costumer[i][j];)
                         System.out.print("Detail order: ");
                         System.out.print(costumer [i][j] + costumer[i][3]);
-                        System.out.println("jjjjjj");
+                        System.out.println("");
                         break;
                     }
                 }
