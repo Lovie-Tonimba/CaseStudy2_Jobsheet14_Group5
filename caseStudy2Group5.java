@@ -2,8 +2,9 @@ import java.util.Scanner;
 public class caseStudy2Group5 {
 
     static int select;
+    static int index;
     public static void main(String[] args) {
-        String [][] costumer = new String[10][4];
+        String [][] costumer = new String[10][5];
         mainMenu(costumer);
     }
     static void mainMenu(String[][]costumer){
@@ -30,10 +31,22 @@ public class caseStudy2Group5 {
     }
 
     static void addOrder(String[][]costumer){
-        displayMenus(costumer);
+        Scanner sc = new Scanner(System.in);
+        if(index < costumer.length){
+            System.out.println();
+            System.out.print("Enter customer name: ");
+            costumer[index][0] = sc.nextLine();
+            System.out.print("Enter the table number: ");
+            costumer[index][1] = sc.nextLine();
+            index++;
+            displayMenus(costumer);
+        }else{
+            System.out.println("Order capacity is full.\n");
+        }
     }
 
     static void displayMenus(String[][]costumer){
+        Scanner sc = new Scanner(System.in);
         
     }
 
