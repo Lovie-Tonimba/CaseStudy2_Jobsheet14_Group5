@@ -47,7 +47,7 @@ public class caseStudy2Group5 {
 
     static void displayMenus(String[][]costumer){
         Scanner sc = new Scanner(System.in);
-        
+        System.out.println("===== CAFE MENU =====");    
     }
 
     static void displayOrderList(String[][]costumer){
