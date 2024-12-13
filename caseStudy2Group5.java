@@ -48,6 +48,8 @@ public class caseStudy2Group5 {
         System.out.println("3. Teh Tarik - Rp 12000"); 
         System.out.println("4. Fried Noodle - Rp 18000");
 
+        System.out.println();
+
         while (true) { 
             System.out.print("Select menu (enter the menu number, or 0 to finish): ");
             selectMenu = sc.nextInt();
@@ -58,18 +60,30 @@ public class caseStudy2Group5 {
                 while (true) { 
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
+                    System.out.println();
                     if(item > 0){
                         break;
                     }else{
                         System.out.println("Invalid input. Try again.");
+                        System.out.println();
                     }
                 }
                 costumer[index][3] = Integer.toString(item);
+                totalOrder += item * price[selectMenu-1];
+                costumer[index][4] = Double.toString(totalOrder);
             }else{
                 System.out.println("Invalid menu selection. Try again.");
+                System.out.println();
             }
         }
         costumer[index][2] = Integer.toString(selectMenu);
+
+        System.out.println();
+
+        System.out.println("Order added successfully.");
+        System.out.println("Total price of the order: Rp " + costumer[index][4]);
+        
+        System.out.println();
     }
 
     static void displayOrderList(String[][]costumer){
@@ -103,7 +117,9 @@ public class caseStudy2Group5 {
         static int index;
         static int selectMenu;
         static int item;
+        static double totalOrder;
         static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
+        static double [] price = {15000, 22000, 12000, 18000};
         public static void main(String[] args) {
             String [][] costumer = new String[10][5];
             mainMenu(costumer);
