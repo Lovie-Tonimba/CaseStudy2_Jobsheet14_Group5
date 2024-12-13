@@ -48,6 +48,8 @@ public class caseStudy2Group5 {
         System.out.println("3. Teh Tarik - Rp 12000"); 
         System.out.println("4. Fried Noodle - Rp 18000");
 
+        System.out.println();
+
         while (true) { 
             System.out.print("Select menu (enter the menu number, or 0 to finish): ");
             selectMenu = sc.nextInt();
@@ -58,55 +60,66 @@ public class caseStudy2Group5 {
                 while (true) { 
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
+                    System.out.println();
                     if(item > 0){
                         break;
                     }else{
                         System.out.println("Invalid input. Try again.");
+                        System.out.println();
                     }
                 }
                 costumer[index][3] = Integer.toString(item);
+                totalOrder += item * price[selectMenu-1];
+                costumer[index][4] = Double.toString(totalOrder);
             }else{
                 System.out.println("Invalid menu selection. Try again.");
+                System.out.println();
             }
         }
         costumer[index][2] = Integer.toString(selectMenu);
+
+        System.out.println();
+
+        System.out.println("Order added successfully.");
+        System.out.println("Total price of the order: Rp " + costumer[index][4]);
+        
+        System.out.println();
     }
 
     static void displayOrderList(String[][]costumer){
-        boolean notNull = false;
-        System.out.println();
-        System.out.println("===== ORDER LIST =====");
-        for (int i = 0; i < costumer.length;i++){
-            if(costumer[i][0] != null){
-                notNull = true;
-                for(int j = 0; j < costumer[i].length;j++){
-                    switch (j) {
-                        case 0:
-                        System.out.print("Costumer name: " + costumer[i][j]);
-                        break;
-                        case 1:
-                        System.out.print("Table number: "+ costumer[i][j]);
-                        break;
-                        case 2:
-                        // for(int k = 0; k<costumer[i][j]; k++)
-                        System.out.print("Detail order: ");
-                        System.out.print(costumer [i][j] + costumer[i][3]);
-                        System.out.println("jjjj");
-                        break;
-                    }
-                }
-            }
+        // boolean notNull = false;
+        // System.out.println();
+        // System.out.println("===== ORDER LIST =====");
+        // for (int i = 0; i < costumer.length;i++){
+            //     if(costumer[i][0] != null){
+                //         notNull = true;
+        //         for(int j = 0; j < costumer[i].length;j++){
+        //             switch (j) {
+            //                 case 0:
+            //                 System.out.print("Costumer name: " + costumer[i][j]);
+            //                 break;
+            //                 case 1:
+            //                 System.out.print("Table number: "+ costumer[i][j]);
+            //                 break;
+            //                 case 2:
+            //                 for(int k = 0; k<costumer[i][j];)
+            //                 System.out.print("Detail order: ");
+            //                 System.out.print(costumer [i][j] + costumer[i][3]);
+            //                 System.out.println("jjjjjj");
+            //                 break;
+            //             }
+            //         }
+            //     }
+            // }
+            
         }
-        
-    }
-
-    static int select, index, selectMenu, item;
-    static double totalOrder;
-    static String [] menu = {"Black Coffe", "Latte", " Teh Tarik", " Fried Noodle"};
-    static double [] price = {15000, 22000, 12000, 18000};
-
-    public static void main(String[] args) {
-        String [][] costumer = new String [10][5];
-        mainMenu(costumer);
-    }
+        static int select;
+        static int index;
+        static int selectMenu;
+        static int item;
+        static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
+        public static void main(String[] args) {
+            String [][] costumer = new String[10][5];
+            mainMenu(costumer);
+        }
 }
