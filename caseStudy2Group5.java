@@ -30,7 +30,11 @@ public class caseStudy2Group5 {
     }
 
     static void addOrder(String[][]costumer){
+        displayMenus(costumer);
+    }
 
+    static void displayMenus(String[][]costumer){
+        
     }
 
     static void displayOrderList(String[][]costumer){
