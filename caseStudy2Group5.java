@@ -26,6 +26,7 @@ public class caseStudy2Group5 {
     
     static void addOrder(String[][]costumer){
         Scanner sc = new Scanner(System.in);
+        totalOrder = 0;
         if(index < costumer.length){
             System.out.println();
             System.out.print("Enter customer name: ");
@@ -80,8 +81,12 @@ public class caseStudy2Group5 {
         }
         costumer[index][2] = Integer.toString(selectMenu);
         
-        System.out.println("Order added successfully.");
-        System.out.println("Total price of the order: Rp " + costumer[index][4]);
+        if(costumer[index][3] != null){
+            System.out.println("Order added successfully.");
+            System.out.println("Total price of the order: Rp " + costumer[index][4]);
+        }else{
+            System.out.println("No items were ordered.");
+        }
         System.out.println();
     }
 
