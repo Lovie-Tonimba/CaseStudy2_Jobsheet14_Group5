@@ -3,6 +3,8 @@ public class caseStudy2Group5 {
 
     static int select;
     static int index;
+    static String menu [] ={"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"};
+    static int menulist [] = new int [menu.length];
     public static void main(String[] args) {
         String [][] costumer = new String[10][5];
         mainMenu(costumer);
@@ -47,7 +49,30 @@ public class caseStudy2Group5 {
 
     static void displayMenus(String[][]costumer){
         Scanner sc = new Scanner(System.in);
-        
+        System.out.println();
+        System.out.println("===== CAFE MENU =====");
+        System.out.println("1. Black Coffe - Rp 15000");
+        System.out.println("2. Latte - Rp 22000");
+        System.out.println("3. Teh Tarik - Rp 12000"); 
+        System.out.println("4. Fried Noodle - Rp 18000");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Select menu (enter the menu number, or 0 to finish): ");
+            int menuSelect = sc.nextInt();
+            if(menuSelect == 0){
+                break;
+            }
+            for (int j = 0; j < menu.length; j++) {
+                switch (menuSelect) {
+                    case 1:
+                        System.out.println("Input the number of items for " + menu[j]);
+                        break;
+                    case 2:
+                    default:
+                        throw new AssertionError();
+                }
+            }
+        }
     }
 
     static void displayOrderList(String[][]costumer){
