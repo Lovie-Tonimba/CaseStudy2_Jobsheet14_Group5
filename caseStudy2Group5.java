@@ -88,15 +88,25 @@ public class caseStudy2Group5 {
                         System.out.print("Table number: "+ costumer[i][j]);
                         break;
                         case 2:
-                        for(k = 0; k<costumer[i][j];)
+                        // for(int k = 0; k<costumer[i][j]; k++)
                         System.out.print("Detail order: ");
                         System.out.print(costumer [i][j] + costumer[i][3]);
-                        System.out.println("jjjjjj");
+                        System.out.println("jjjj");
                         break;
                     }
                 }
             }
         }
         
+    }
+
+    static int select, index, selectMenu, item;
+    static double totalOrder;
+    static String [] menu = {"Black Coffe", "Latte", " Teh Tarik", " Fried Noodle"};
+    static double [] price = {15000, 22000, 12000, 18000};
+
+    public static void main(String[] args) {
+        String [][] costumer = new String [10][5];
+        mainMenu(costumer);
     }
 }
