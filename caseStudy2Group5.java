@@ -32,8 +32,8 @@ public class caseStudy2Group5 {
             costumer[index][0] = sc.nextLine();
             System.out.print("Enter the table number: ");
             costumer[index][1] = sc.nextLine();
-            index++;
             displayMenus(costumer);
+            index++;
         }else{
             System.out.println("Order capacity is full.\n");
         }
@@ -56,7 +56,7 @@ public class caseStudy2Group5 {
             if(selectMenu == 0){
                 break;
             } 
-            if(selectMenu > 0 && selectMenu < 5){
+            if(selectMenu > 0 && selectMenu <= 4){
                 while (true) { 
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
@@ -69,8 +69,11 @@ public class caseStudy2Group5 {
                     }
                 }
                 costumer[index][3] = Integer.toString(item);
+
                 totalOrder += item * price[selectMenu-1];
                 costumer[index][4] = Double.toString(totalOrder);
+
+                System.out.println("Order added successfully.");
             }else{
                 System.out.println("Invalid menu selection. Try again.");
                 System.out.println();
@@ -78,25 +81,21 @@ public class caseStudy2Group5 {
         }
         costumer[index][2] = Integer.toString(selectMenu);
 
-        System.out.println();
-
-        System.out.println("Order added successfully.");
         System.out.println("Total price of the order: Rp " + costumer[index][4]);
         
         System.out.println();
     }
 
     static void displayOrderList(String[][]costumer){
-        }
-        static int select;
-        static int index;
-        static int selectMenu;
-        static int item;
-        static double totalOrder;
-        static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
-        static double [] price = {15000, 22000, 12000, 18000};
-        public static void main(String[] args) {
-            String [][] costumer = new String[10][5];
-            mainMenu(costumer);
-        }
+        
+    }
+
+    static int select, index, selectMenu, item;
+    static double totalOrder;
+    static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
+    static double [] price = {15000, 22000, 12000, 18000};
+    public static void main(String[] args) {
+        String [][] costumer = new String[50][5];
+        mainMenu(costumer);
+    }
 }
