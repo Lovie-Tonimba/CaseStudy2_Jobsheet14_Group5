@@ -44,10 +44,10 @@ public class caseStudy2Group5 {
         Scanner sc = new Scanner(System.in);
         System.out.println();     
         System.out.println("===== CAFE MENU =====");
-        System.out.println("1. Black Coffe - Rp 15000");
-        System.out.println("2. Latte - Rp 22000");
-        System.out.println("3. Teh Tarik - Rp 12000"); 
-        System.out.println("4. Fried Noodle - Rp 18000");
+        System.out.println("1. Black Coffe - Rp " + price[0]);
+        System.out.println("2. Latte - Rp " + price[1]);
+        System.out.println("3. Teh Tarik - Rp " + price[2]); 
+        System.out.println("4. Fried Noodle - Rp " + price[3]);
         System.out.println();
 
         while (true) { 
@@ -71,7 +71,7 @@ public class caseStudy2Group5 {
                 costumer[index][3] = Integer.toString(item);
 
                 totalOrder += item * price[selectMenu-1];
-                costumer[index][4] = Double.toString(totalOrder);
+                costumer[index][4] = Integer.toString(totalOrder);
             }else{
                 System.out.println("Invalid menu selection. Try again.");
                 System.out.println();
@@ -94,9 +94,9 @@ public class caseStudy2Group5 {
     }
 
     static int select, index, selectMenu, item;
-    static double totalOrder;
+    static int totalOrder;
     static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
-    static double [] price = {15000, 22000, 12000, 18000};
+    static int [] price = {15000, 22000, 12000, 18000};
     public static void main(String[] args) {
         String [][] costumer = new String[50][5];
         mainMenu(costumer);
