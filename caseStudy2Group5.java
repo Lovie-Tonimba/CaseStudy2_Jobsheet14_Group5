@@ -116,9 +116,10 @@ public class CaseStudy2Group5 {
             }
         }
         System.out.println();
+        }
     }
-
         static int select, index = 0, selectMenu, item;
+        static int select, index, selectMenu, item;
         static int totalOrder;
         static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
         static int [] price= {15000, 22000, 12000, 18000};
@@ -126,5 +127,5 @@ public class CaseStudy2Group5 {
         public static void main(String[] args) {
             String [][] costumer = new String[50][5];
             mainMenu(costumer);
-        }
     }
+   
