@@ -90,41 +90,6 @@ public class caseStudy2Group5 {
     }
 
     static void displayOrderList(String[][]costumer){
-        boolean notNull = false;
-        System.out.println();
-        System.out.println("===== ORDER LIST =====");
-        for (int i = 0; i < costumer.length;i++){
-                if(costumer[i][0] != null){
-                    notNull = true;
-                    
-                        System.out.println("Customer name: "+ costumer[i][0]);
-                        System.out.println("Table Number: "+ costumer[i][1]);
-                        System.out.println("Order Detail: ");
-                        
-                        for(int j = 2; j < 3; j++){
-                            if (costumer[i][j] != null && !costumer[i][j].isEmpty()){
-                                System.out.print(costumer[i][j]);
-                            }
-                        }
-                        System.out.println("Total price: Rp "+ costumer[i][4]);
-                        System.out.println("----------------------------");
-                    }
-                    
-            if(!notNull){
-                System.out.println("There is no order yet");
-                break;
-        }
+        
     }
-        System.out.println();
-        }
-
-        static int select, index = 0, selectMenu, item;
-        static int totalOrder;
-        static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Nodlee"};
-        static int [] price = {15000, 22000, 12000, 18000};
-
-    public static void main(String[] args){
-        String [][] costumer = new String[50][5];
-        mainMenu(costumer);
-    }   
 }
