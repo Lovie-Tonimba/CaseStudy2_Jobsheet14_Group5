@@ -56,7 +56,6 @@ public class caseStudy2Group5 {
             selectMenu = sc.nextInt();
             if(selectMenu == 0){
                 break;
-
             } 
             if(selectMenu > 0 && selectMenu <= 4 ){
                 while (true) { 
@@ -70,7 +69,7 @@ public class caseStudy2Group5 {
                         System.out.println();
                     }
                 }
-                costumer[index][2] += "- " + menu[selectMenu - 1] + " x " + item + " = Rp" + (price[selectMenu-1] * item) + "\n";
+                costumer[index][2] += "- " + menu[selectMenu - 1] + " x " + item + " = Rp " + (price[selectMenu-1] * item) + "\n";
                 costumer[index][3] = Integer.toString(item);
                 totalOrder += item * price[selectMenu-1];
                 costumer[index][4] = Integer.toString(totalOrder);
@@ -83,7 +82,7 @@ public class caseStudy2Group5 {
         if(costumer[index][3] != null){
             System.out.println();
             System.out.println("Order added successfully.");
-            System.out.println("Total price of the order: Rp" + costumer[index][4]);
+            System.out.println("Total price of the order: Rp " + costumer[index][4]);
         }else{
             System.out.println("No items were ordered.");
         }
@@ -107,7 +106,7 @@ public class caseStudy2Group5 {
                                 System.out.print(costumer[i][j]);
                             }
                         }
-                        System.out.println("Total price: Rp"+ costumer[i][4]);
+                        System.out.println("Total price: Rp "+ costumer[i][4]);
                         System.out.println("----------------------------");
                     }
             if(!notNull){
@@ -116,10 +115,12 @@ public class caseStudy2Group5 {
         }}
         System.out.println();
         }
+
         static int select, index, selectMenu, item;
         static int totalOrder;
         static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
         static int [] price= {15000, 22000, 12000, 18000};
+        
         public static void main(String[] args) {
             String [][] costumer = new String[50][5];
             mainMenu(costumer);
