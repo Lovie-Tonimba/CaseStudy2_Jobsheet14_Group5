@@ -33,7 +33,7 @@ public class caseStudy2Group5 {
             costumer[index][0] = sc.nextLine();
             System.out.print("Enter the table number: ");
             costumer[index][1] = sc.nextLine();
-            totalOrder =0;
+             double totalOrder =0;
             costumer[index][2] = "";
             displayMenus(costumer);
             index++;
@@ -64,8 +64,11 @@ public class caseStudy2Group5 {
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
                     System.out.println();
+                    // String menuOrder = "";                    
                     if(item > 0){
-                        costumer[index][2] += menu[selectMenu - 1] + " x " + item + " = Rp" + (price[selectMenu-1] * item) + "\n";
+                        // costumer[index][2] += menu[selectMenu-1];
+                        // menuOrder += costumer[index][2]  ;
+                        costumer[index][2] += "- " + menu[selectMenu - 1] + " x " + item + " = Rp" + (price[selectMenu-1] * item) + "\n";
                         totalOrder += item * price[selectMenu-1];
                         break;
                     }else{
@@ -95,22 +98,26 @@ public class caseStudy2Group5 {
         for (int i = 0; i < costumer.length;i++){
                 if(costumer[i][0] != null){
                     notNull = true;
-                    System.out.println("Customer name: "+ costumer[i][0]);
-                    System.out.println("Table Number: "+ costumer[i][1]);
-                    System.out.println("Order Detail: ");
-                String[] orders = costumer[i][2].split("\n");
-                for(String order : orders){
-                    if(!order.isEmpty()){
-                        System.out.println("- " + order);
+                    
+                        System.out.println("Customer name: "+ costumer[i][0]);
+                        System.out.println("Table Number: "+ costumer[i][1]);
+                        System.out.println("Order Detail: ");
+                        
+                        for(int j = 2; j < costumer[i].length-1; j++){
+                            if (costumer[i][j] != null && !costumer[i][j].isEmpty()){
+                                System.out.print(costumer[i][j]);
+                            }
+                        }
+                        // System.out.println();
+                        System.out.println("Total price: "+ costumer[i][4]);
+                        System.out.println();
                     }
-                }
-                System.out.println("Total price "+ costumer[i][4]);
-                System.out.println();
-                }
-            }
+        
             if(!notNull){
                 System.out.println("There is no order yet");
-        }
+                break;
+        }}
+        System.out.println();
         }
         static int select;
         static int index = 0;
@@ -123,4 +130,4 @@ public class caseStudy2Group5 {
             String [][] costumer = new String[10][5];
             mainMenu(costumer);
         }
-}
+    }
