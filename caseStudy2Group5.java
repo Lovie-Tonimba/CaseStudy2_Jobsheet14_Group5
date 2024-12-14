@@ -109,10 +109,12 @@ public class caseStudy2Group5 {
                         System.out.println("Total price: Rp "+ costumer[i][4]);
                         System.out.println("----------------------------");
                     }
+                    
             if(!notNull){
                 System.out.println("There is no order yet");
                 break;
-        }}
+        }
+    }
         System.out.println();
         }
 
@@ -120,7 +122,7 @@ public class caseStudy2Group5 {
         static int totalOrder;
         static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
         static int [] price= {15000, 22000, 12000, 18000};
-        
+
         public static void main(String[] args) {
             String [][] costumer = new String[50][5];
             mainMenu(costumer);
