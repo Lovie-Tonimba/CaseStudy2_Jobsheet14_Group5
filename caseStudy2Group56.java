@@ -1,6 +1,17 @@
 import java.util.Scanner;
-public class caseStudy2Group51 {
-
+public class caseStudy2Group56 {
+    static int select, index, selectMenu, item;
+    static double totalOrder;
+    static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
+    static double [] price = {15000, 22000, 12000, 18000};
+    //static int select;
+    //static int index = 0;
+    //static String menu [] ={"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"};
+    //static int menulist [] = new int [menu.length];
+    //public static void main(String[] args) {
+        //String [][] costumer = new String[10][5];
+      //  mainMenu(costumer);
+    //}
     static void mainMenu(String[][]costumer){
         Scanner sc = new Scanner(System.in);
         while (true) { 
@@ -26,23 +37,27 @@ public class caseStudy2Group51 {
     
     static void addOrder(String[][]costumer){
         Scanner sc = new Scanner(System.in);
+        //if (index < costumer.length){
+          //  System.out.print("enter costumer name: ");
         totalOrder = 0;
         if(index < costumer.length){
             System.out.println();
             System.out.print("Enter customer name: ");
             costumer[index][0] = sc.nextLine();
-            System.out.print("Enter the table number: ");
+            System.out.print("enter number table: ");
             costumer[index][1] = sc.nextLine();
+            System.out.println();
             displayMenus(costumer);
             index++;
-        }else{
-            System.out.println("Order capacity is full.\n");
-        }
+            }else{
+                System.out.println("Order capacity is full.\n");
+            } 
+        //}
     }
     
     static void displayMenus(String[][]costumer){
         Scanner sc = new Scanner(System.in);
-        System.out.println();
+        System.out.println();     
         System.out.println("===== CAFE MENU =====");
         System.out.println("1. Black Coffe - Rp 15000");
         System.out.println("2. Latte - Rp 22000");
@@ -56,37 +71,31 @@ public class caseStudy2Group51 {
             if(selectMenu == 0){
                 break;
             } 
-
             if(selectMenu > 0 && selectMenu <= 4){
-
                 while (true) { 
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
                     System.out.println();
                     if(item > 0){
-                        costumer[index][2] += menu[selectMenu - 1] + " x " + item + " = Rp" + (price[selectMenu-1] * item) + "\n";
-                        totalOrder += item * price[selectMenu-1];
                         break;
                     }else{
                         System.out.println("Invalid input. Try again.");
                         System.out.println();
                     }
                 }
-
                 costumer[index][3] = Integer.toString(item);
 
                 totalOrder += item * price[selectMenu-1];
                 costumer[index][4] = Double.toString(totalOrder);
-
             }else{
                 System.out.println("Invalid menu selection. Try again.");
                 System.out.println();
             }
         }
-
         costumer[index][2] = Integer.toString(selectMenu);
         
         if(costumer[index][3] != null){
+            System.out.println();
             System.out.println("Order added successfully.");
             System.out.println("Total price of the order: Rp " + costumer[index][4]);
         }else{
@@ -100,30 +109,28 @@ public class caseStudy2Group51 {
         System.out.println();
         System.out.println("===== ORDER LIST =====");
         for (int i = 0; i < costumer.length;i++){
-                if(costumer[i][0] != null){
-                    notNull = true;
-                    System.out.println("Customer name: "+ costumer[i][0]);
-                    System.out.println("Table Number: "+ costumer[i][1]);
-                    System.out.println("Order Detail: ");
-                String[] orders = costumer[i][2].split("\n");
-                for(String order : orders){
-                    if(!order.isEmpty()){
-                        System.out.println("- " + order);
+            if(costumer[i][0] != null){
+                notNull = true;
+                for(int j = 0; j < costumer[i].length;j++){
+                    switch (j) {
+                        case 0:
+                        System.out.print("Costumer name: " + costumer[i][j]);
+                        break;
+                        case 1:
+                        System.out.print("Table number: "+ costumer[i][j]);
+                        break;
+                        case 2:
+                        for(int k = 0; k < costumer[i].length; k++)
+                        System.out.print("Detail order: ");
+                        System.out.print(costumer [i][j] + costumer[i][3]);
+                        System.out.println("jjjjjj");
+                        break;
                     }
                 }
-                System.out.println("Total price "+ costumer[i][4]);
-                System.out.println();
-                }
             }
-            if(!notNull){
-                System.out.println("There is no order yet");
         }
-        }
-    
-    static int select, index, selectMenu, item;
-    static double totalOrder;
-    static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
-    static double [] price = {15000, 22000, 12000, 18000};
+    }
+
     public static void main(String[] args) {
         String [][] costumer = new String[50][5];
         mainMenu(costumer);

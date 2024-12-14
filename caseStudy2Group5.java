@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class CaseStudy2Group5 {
+public class caseStudy2Group5 {
 
     static void mainMenu(String[][]costumer){
         Scanner sc = new Scanner(System.in);
@@ -113,19 +113,18 @@ public class CaseStudy2Group5 {
             if(!notNull){
                 System.out.println("There is no order yet");
                 break;
-            }
         }
+    }
         System.out.println();
         }
-    }
-        static int select, index = 0, selectMenu, item;
-        static int select, index, selectMenu, item;
-        static int totalOrder;
-        static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
-        static int [] price= {15000, 22000, 12000, 18000};
 
-        public static void main(String[] args) {
-            String [][] costumer = new String[50][5];
-            mainMenu(costumer);
-    }
-   
+        static int select, index = 0, selectMenu, item;
+        static int totalOrder;
+        static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Nodlee"};
+        static int [] price = {15000, 22000, 12000, 18000};
+
+    public static void main(String[] args){
+        String [][] costumer = new String[50][5];
+        mainMenu(costumer);
+    }   
+}

@@ -48,7 +48,6 @@ public class caseStudy2Group52 {
         System.out.println("2. Latte - Rp 22000");
         System.out.println("3. Teh Tarik - Rp 12000"); 
         System.out.println("4. Fried Noodle - Rp 18000");
-
         System.out.println();
 
         while (true) { 
@@ -57,18 +56,23 @@ public class caseStudy2Group52 {
             if(selectMenu == 0){
                 break;
             } 
+
             if(selectMenu > 0 && selectMenu <= 4){
+
                 while (true) { 
                     System.out.print("Input the number of items for " + menu[selectMenu-1] + ": ");
                     item = sc.nextInt();
                     System.out.println();
                     if(item > 0){
+                        costumer[index][2] += menu[selectMenu - 1] + " x " + item + " = Rp" + (price[selectMenu-1] * item) + "\n";
+                        totalOrder += item * price[selectMenu-1];
                         break;
                     }else{
                         System.out.println("Invalid input. Try again.");
                         System.out.println();
                     }
                 }
+
                 costumer[index][3] = Integer.toString(item);
 
                 totalOrder += item * price[selectMenu-1];
@@ -79,6 +83,7 @@ public class caseStudy2Group52 {
                 System.out.println();
             }
         }
+
         costumer[index][2] = Integer.toString(selectMenu);
         
         if(costumer[index][3] != null){
@@ -91,7 +96,29 @@ public class caseStudy2Group52 {
     }
 
     static void displayOrderList(String[][]costumer){
-    }
+        boolean notNull = false;
+        System.out.println();
+        System.out.println("===== ORDER LIST =====");
+        for (int i = 0; i < costumer.length;i++){
+                if(costumer[i][0] != null){
+                    notNull = true;
+                    System.out.println("Customer name: "+ costumer[i][0]);
+                    System.out.println("Table Number: "+ costumer[i][1]);
+                    System.out.println("Order Detail: ");
+                String[] orders = costumer[i][2].split("\n");
+                for(String order : orders){
+                    if(!order.isEmpty()){
+                        System.out.println("- " + order);
+                    }
+                }
+                System.out.println("Total price "+ costumer[i][4]);
+                System.out.println();
+                }
+            }
+            if(!notNull){
+                System.out.println("There is no order yet");
+        }
+        }
     
     static int select, index, selectMenu, item;
     static double totalOrder;

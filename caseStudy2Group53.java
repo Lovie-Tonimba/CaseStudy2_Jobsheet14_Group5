@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class caseStudy2Group51 {
+public class caseStudy2Group53 {
 
     static void mainMenu(String[][]costumer){
         Scanner sc = new Scanner(System.in);
@@ -117,9 +117,9 @@ public class caseStudy2Group51 {
             }
             if(!notNull){
                 System.out.println("There is no order yet");
+            }
+            System.out.println();
         }
-        }
-    
     static int select, index, selectMenu, item;
     static double totalOrder;
     static String [] menu = {"Black Coffe", "Latte", "Teh Tarik", "Fried Noodle"}; 
